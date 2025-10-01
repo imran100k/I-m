@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Self Click</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+  <div class="bg-white p-6 rounded-xl shadow text-center">
+    <h2 class="text-xl font-bold mb-4">Balance Simulator</h2>
+    <p id="balance" class="text-lg mb-4">Balance: 0.00</p>
+    <!-- আসল Ad Button -->
+    <button class="bg-indigo-500 text-white px-4 py-2 rounded-lg mb-2">📢 Watch Real Ad</button>
+    <br>
+    <!-- শুধুই টেস্টের জন্য -->
+    <button onclick="fakeClick()" class="bg-green-500 text-white px-4 py-2 rounded-lg">🧪 Fake Self-Click (Test)</button>
+  </div>
+
+  <script>
+    let balance = 0.00;
+
+    function fakeClick(){
+      balance += 0.10; // প্রতি ফেক ক্লিকে +0.10
+      document.getElementById("balance").innerText = "Balance: " + balance.toFixed(2);
+      alert("Fake Ad Click simulated ✅");
+    }
+  </script>
+</body>
+</html>
